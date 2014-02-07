@@ -1,0 +1,43 @@
+<!doctype html>
+    <html ng-app>
+    <head>
+        <style>
+            h1{
+                color: #888cc8;
+            }
+        </style>
+        <script src="angular.js"></script>
+           <script>
+        var ctr1;
+        ctr1 = function ($scope) {
+            $scope.listdata = [
+            {name:'sachin',age:34},
+            {name:'kumar',age:30},
+            {name:'yo man',age:90},
+                {name:'yo man',age:90},
+            {name:'game',age:1}];
+
+            $scope.remove = function($value){
+                alert($value);
+            }
+
+
+        };
+
+    </script>
+    </head>
+    <body>
+       <div ng-controller="ctr1">
+           sacgub
+           <input type="search" ng-model="search">
+         <ul>
+             <li ng-repeat="data in listdata | filter:search">{{data.name}} -> {{data.age}}
+             <button ng-click="remove(data.age)">X</button>
+             </li>
+
+         </ul>
+       </div>
+
+ 
+    </body>
+</html>
